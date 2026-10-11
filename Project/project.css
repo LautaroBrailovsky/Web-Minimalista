@@ -1,0 +1,71 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: serif; color: #222; background: #fff; line-height: 1.5; }
+
+.contenedor { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+.texto-rosa { color: #D1498B; }
+.texto-verde { color: #709775; }
+.texto-morado { color: #7B2CBF; }
+.borde-rosa { border: 1px solid #D1498B; }
+
+.menu-superior { position: fixed; top: 0; width: 100%; background: #fff; border-bottom: 1px solid #eee; padding: 15px 0; z-index: 100; }
+.contenido-menu { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+.perfil { display: flex; align-items: center; gap: 10px; }
+.imagen-perfil { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+.navegacion { display: flex; gap: 15px; font-family: monospace; }
+.enlace { text-decoration: none; font-size: 14px; }
+
+.espacio-superior { margin-top: 140px; }
+.cabecera-proyecto { margin-bottom: 40px; }
+.etiqueta-proyecto { font-family: monospace; color: #7B2CBF; font-weight: bold; text-decoration: underline; font-size: 14px; }
+.titulo-principal { font-size: 40px; color: #7B2CBF; font-weight: normal; margin: 15px 0; }
+.descripcion-proyecto { font-size: 22px; color: #333; }
+
+/* Galería para celular: Todo centrado */
+.foto-galeria { display: flex; flex-direction: column; align-items: center; margin-bottom: 40px; }
+.foto-galeria img { width: 100%; height: auto; border-radius: 4px; }
+.foto-galeria figcaption { margin-top: 10px; color: #666; font-size: 14px; font-family: monospace; text-align: center; }
+
+.bloque-texto { margin: 60px 0; font-size: 22px; color: #333; text-align: center; }
+
+/* Bloque más proyectos (reutilizado) */
+.seccion-mas-proyectos { margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee; }
+.caja-exploracion { margin-bottom: 40px; }
+.texto-exploracion { font-size: 24px; margin-bottom: 20px; }
+.boton-exploracion { font-family: monospace; background: none; border: none; font-size: 14px; color: #666; cursor: pointer; text-decoration: underline; }
+.cuadricula-proyectos { display: grid; grid-template-columns: 1fr; gap: 30px; }
+.tarjeta-pequena { display: flex; flex-direction: column; gap: 20px; }
+.info-tarjeta { display: flex; flex-direction: column; align-items: flex-start; }
+.categoria-tarjeta { font-family: monospace; font-size: 12px; font-weight: bold; margin-bottom: 5px; }
+.titulo-tarjeta { font-size: 28px; font-weight: normal; margin-bottom: 10px; }
+.enlace-tarjeta { font-family: monospace; font-size: 12px; text-decoration: none; padding: 3px 8px; border-radius: 3px; }
+.imagen-tarjeta { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+@media (min-width: 768px) {
+    .contenido-menu { flex-direction: row; justify-content: space-between; }
+    .espacio-superior { margin-top: 120px; }
+    
+    .titulo-principal { font-size: 60px; }
+    .descripcion-proyecto { font-size: 32px; max-width: 800px; }
+    
+    .foto-galeria { margin-bottom: 80px; }
+    
+    .alinear-centro { align-items: center; }
+    .alinear-centro img { max-width: 700px; }
+    
+    .alinear-izquierda { align-items: flex-start; }
+    .alinear-izquierda img { max-width: 700px; }
+    .alinear-izquierda figcaption { text-align: left; }
+    
+    .alinear-derecha { align-items: flex-end; }
+    .alinear-derecha img { max-width: 700px; }
+    .alinear-derecha figcaption { text-align: left; }
+    
+    .ancho-completo { align-items: flex-start; }
+    .ancho-completo img { max-width: 100%; }
+    .ancho-completo figcaption { text-align: left; }
+    
+    .bloque-texto { font-size: 32px; max-width: 800px; text-align: left; margin: 60px auto; }
+    .texto-exploracion { font-size: 36px; max-width: 800px; }
+    .cuadricula-proyectos { grid-template-columns: repeat(3, 1fr); }
+}
