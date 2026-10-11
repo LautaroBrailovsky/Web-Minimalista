@@ -1,0 +1,166 @@
+/* 1. RESET (Limpiamos los márgenes que pone el navegador por defecto) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Source Serif 4', serif;
+  color: #222;
+  background-color: #fff;
+}
+
+/* 2. CLASES GENERALES (Diseño para móviles primero) */
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; 
+  padding: 0 20px;
+}
+
+.texto-rosa { color: #d05377; }
+.texto-verde { color: #879435; }
+.texto-azul { color: #3d5a80; }
+.texto-morado { color: #9d4edd; }
+.texto-oliva { color: #83854c; }
+
+/* 3. MENÚ SUPERIOR FIJO */
+.menu-superior {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  z-index: 100;
+}
+
+.contenido-menu {
+  display: flex;
+  flex-direction: column; /* En móvil, foto arriba y menú abajo */
+  align-items: center;
+  gap: 15px;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagen-perfil {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nombre-perfil { font-size: 18px; }
+
+.navegacion {
+  display: flex;
+  gap: 15px;
+  font-family: monospace;
+}
+
+.enlace { text-decoration: none; font-size: 14px; }
+
+/* 4. SECCIONES (Diseño Móvil) */
+.presentacion {
+  margin-top: 140px; 
+  margin-bottom: 40px;
+}
+
+.texto-presentacion { font-size: 22px; line-height: 1.4; color: #333; }
+
+.tarjeta-proyecto {
+  display: flex;
+  flex-direction: column-reverse; /* Foto arriba, texto abajo en celular */
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+}
+
+.info-proyecto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.categoria-proyecto { font-size: 12px; }
+.titulo-proyecto { font-size: 24px; font-weight: normal; }
+
+.imagen-proyecto {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.boton {
+  text-decoration: none;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 3px;
+  border: 1px solid;
+  font-family: monospace;
+}
+
+.boton-azul { color: #3d5a80; border-color: #3d5a80; }
+.boton-morado { color: #9d4edd; border-color: #9d4edd; }
+.boton-oliva { color: #83854c; border-color: #83854c; }
+
+/* 5. PIE DE PÁGINA (Móvil) */
+.seccion-final { padding-top: 40px; }
+.caja-mensaje { margin-bottom: 40px; }
+.titulo-mensaje { font-size: 24px; font-weight: normal; line-height: 1.3; margin-bottom: 20px; }
+
+.boton-mensaje {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  font-family: monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.redes-sociales {
+  display: flex;
+  flex-direction: column; /* Enlaces apilados en móvil */
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.enlace-social { text-decoration: none; color: #333; font-size: 24px; }
+.pie-pagina { text-align: center; padding: 20px 0; border-top: 1px solid #eee; }
+.texto-pie { font-size: 16px; color: #666; }
+
+/* 6. MEDIA QUERIES (Para pantallas grandes de computadoras y tablets) */
+@media (min-width: 768px) {
+  .contenido-menu {
+    flex-direction: row; /* Menú en una sola línea */
+    justify-content: space-between;
+  }
+
+  .presentacion { margin-top: 100px; margin-bottom: 60px; }
+  .texto-presentacion { font-size: 28px; }
+
+  .tarjeta-proyecto {
+    flex-direction: row; /* Texto a la izquierda, foto a la derecha */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .imagen-proyecto { width: 320px; height: 320px; }
+  .info-proyecto { padding-right: 30px; }
+  .titulo-proyecto { font-size: 28px; }
+  .titulo-mensaje { font-size: 40px; }
+
+  .redes-sociales {
+    flex-direction: row; /* Redes sociales en una línea horizontal */
+    justify-content: space-between;
+  }
+}
