@@ -1,4 +1,3 @@
-/* 1. RESET (Limpiamos los márgenes que pone el navegador por defecto) */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,7 @@ body {
   background-color: #fff;
 }
 
-/* 2. CLASES GENERALES (Diseño para móviles primero) */
+
 .contenedor {
   width: 100%;
   max-width: 1000px;
@@ -39,7 +38,6 @@ body {
   color: #83854c;
 }
 
-/* 3. MENÚ SUPERIOR FIJO */
 .menu-superior {
   position: fixed;
   top: 0;
@@ -53,7 +51,7 @@ body {
 .contenido-menu {
   display: flex;
   flex-direction: column;
-  /* En móvil, foto arriba y menú abajo */
+
   align-items: center;
   gap: 15px;
 }
@@ -86,7 +84,6 @@ body {
   font-size: 14px;
 }
 
-/* 4. SECCIONES (Diseño Móvil) */
 .presentacion {
   margin-top: 140px;
   margin-bottom: 40px;
@@ -101,7 +98,7 @@ body {
 .tarjeta-proyecto {
   display: flex;
   flex-direction: column-reverse;
-  /* Foto arriba, texto abajo en celular */
+
   gap: 20px;
   padding: 40px 0;
   border-top: 1px solid #eee;
@@ -154,7 +151,6 @@ body {
   border-color: #83854c;
 }
 
-/* 5. PIE DE PÁGINA (Móvil) */
 .seccion-final {
   padding-top: 40px;
 }
@@ -182,7 +178,6 @@ body {
 .redes-sociales {
   display: flex;
   flex-direction: column;
-  /* Enlaces apilados en móvil */
   align-items: center;
   gap: 20px;
   padding-bottom: 20px;
@@ -205,11 +200,10 @@ body {
   color: #666;
 }
 
-/* 6. MEDIA QUERIES (Para pantallas grandes de computadoras y tablets) */
 @media (min-width: 768px) {
   .contenido-menu {
     flex-direction: row;
-    /* Menú en una sola línea */
+
     justify-content: space-between;
   }
 
@@ -224,7 +218,6 @@ body {
 
   .tarjeta-proyecto {
     flex-direction: row;
-    /* Texto a la izquierda, foto a la derecha */
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -248,7 +241,6 @@ body {
 
   .redes-sociales {
     flex-direction: row;
-    /* Redes sociales en una línea horizontal */
     justify-content: space-between;
   }
 }

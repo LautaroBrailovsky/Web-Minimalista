@@ -103,7 +103,7 @@ body {
     color: #333;
 }
 
-/* Galería para celular: Todo centrado */
+
 .foto-galeria {
     display: flex;
     flex-direction: column;
@@ -132,7 +132,7 @@ body {
     text-align: center;
 }
 
-/* Bloque más proyectos (reutilizado) */
+
 .seccion-mas-proyectos {
     margin-top: 60px;
     padding-top: 40px;
