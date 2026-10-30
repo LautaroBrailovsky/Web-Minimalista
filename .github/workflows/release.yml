@@ -61,31 +61,31 @@ jobs:
             ${{ vars.DOCKERHUB_USERNAME }}/web:${{ needs.release.outputs.version }}
             ${{ vars.DOCKERHUB_USERNAME }}/web:latest
 
-  deploy-test:
-    needs: [release, publish]
-    uses: ./.github/workflows/deploy.yml
-    with:
-      environment: test
-      version: ${{ needs.release.outputs.version }}
-    secrets: inherit
+#  deploy-test:
+  #  needs: [release, publish]
+   # uses: ./.github/workflows/deploy.yml
+   # with:
+   #   environment: test
+   #   version: ${{ needs.release.outputs.version }}
+  #  secrets: inherit
 
-  dast:
-    needs: deploy-test
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - name: Análisis dinámico con OWASP ZAP
-        uses: zaproxy/action-baseline@v0.15.0
-        with:
-          target: ${{ vars.TEST_URL }}
-          allow_issue_writing: false
-          fail_action: false
-
-  deploy-prod: # espera a que alguien apruebe el entorno production
-    needs: [release, deploy-test, dast]
-    uses: ./.github/workflows/deploy.yml
-    with:
-      environment: production
-      version: ${{ needs.release.outputs.version }}
-    secrets: inherit
+ # dast:
+ #   needs: deploy-test
+   # runs-on: ubuntu-latest
+  #  permissions:
+    #  contents: read
+   # steps:
+   #   - name: Análisis dinámico con OWASP ZAP
+     #   uses: zaproxy/action-baseline@v0.15.0
+    #    with:
+   #       target: ${{ vars.TEST_URL }}
+  #        allow_issue_writing: false
+ #         fail_action: false
+#
+#  deploy-prod: # espera a que alguien apruebe el entorno production
+ #   needs: [release, deploy-test, dast]
+   # uses: ./.github/workflows/deploy.yml
+  #  with:
+ #     environment: production
+   #   version: ${{ needs.release.outputs.version }}
+ #   secrets: inherit 
