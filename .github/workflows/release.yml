@@ -58,8 +58,8 @@ jobs:
           push: true
           build-args: VERSION=${{ needs.release.outputs.version }}
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/web:${{ needs.release.outputs.version }}
-            ${{ vars.DOCKERHUB_USERNAME }}/web:latest
+            ${{ vars.DOCKERHUB_USERNAME }}/web-minimalista:${{ needs.release.outputs.version }}
+            ${{ vars.DOCKERHUB_USERNAME }}/web-minimalista:latest
 
 #  deploy-test:
   #  needs: [release, publish]
